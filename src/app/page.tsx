@@ -50,7 +50,10 @@ export default async function Home() {
 							Contact
 						</Link>
 					</nav>
-					<div className='flex items-center gap-4'>
+					<div className='flex items-center gap-3 md:gap-4'>
+						<Link href='/contact' className='md:hidden text-sm font-medium hover:text-blue-600 transition-colors'>
+							Contact
+						</Link>
 						<Link href='#products'>
 							<Button className='rounded-full shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700'>
 								Shop Now

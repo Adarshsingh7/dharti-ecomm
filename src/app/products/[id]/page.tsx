@@ -37,7 +37,13 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           <nav className="hidden md:flex gap-6">
             <Link href="/" className="text-sm font-medium hover:text-blue-600 transition-colors">Home</Link>
             <Link href="/products" className="text-sm font-medium hover:text-blue-600 transition-colors">Products</Link>
+            <Link href="/contact" className="text-sm font-medium hover:text-blue-600 transition-colors">Contact</Link>
           </nav>
+          <div className="md:hidden flex items-center">
+            <Link href="/contact" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Contact
+            </Link>
+          </div>
         </div>
       </header>
 

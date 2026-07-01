@@ -60,6 +60,11 @@ export default function ContactPage() {
             <Link href="/products" className="text-sm font-medium hover:text-blue-600 transition-colors">Products</Link>
             <Link href="/contact" className="text-sm font-medium text-blue-600 transition-colors">Contact</Link>
           </nav>
+          <div className="md:hidden flex items-center">
+            <Link href="/contact" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Contact
+            </Link>
+          </div>
         </div>
       </header>
 
