@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import connectToDatabase from '@/lib/db';
 import { Product } from '@/models/Product';
+import Footer from '@/components/Footer';
 
 export const dynamic = 'force-dynamic';
 
@@ -47,7 +48,11 @@ export default async function ProductsPage() {
                <Link href={`/products/${product._id}`} key={product._id} className="group flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
                  <div className="relative aspect-square w-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
                    {product.images && product.images.length > 0 ? (
-                     <img src={product.images[0]} alt={product.name} className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
+                     /\.(mp4|webm|ogg)$/i.test(product.images[0]) ? (
+                       <video src={product.images[0]} className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" muted loop autoPlay playsInline />
+                     ) : (
+                       <img src={product.images[0]} alt={product.name} className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
+                     )
                    ) : (
                      <div className="w-full h-full flex items-center justify-center text-slate-400">No Image</div>
                    )}
@@ -65,6 +70,7 @@ export default async function ProductsPage() {
            )}
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

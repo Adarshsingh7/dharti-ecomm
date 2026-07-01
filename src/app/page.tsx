@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import connectToDatabase from '@/lib/db';
 import { Product } from '@/models/Product';
+import { CheckCircle2, ChevronRight, Star } from 'lucide-react';
+import Footer from '@/components/Footer';
 
 export const dynamic = 'force-dynamic';
 
@@ -191,11 +193,22 @@ export default async function Home() {
 									>
 										<div className='relative aspect-square w-full bg-slate-100 dark:bg-slate-800 overflow-hidden'>
 											{product.images && product.images.length > 0 ? (
-												<img
-													src={product.images[0]}
-													alt={product.name}
-													className='object-cover w-full h-full group-hover:scale-105 transition-transform duration-500'
-												/>
+                        /\.(mp4|webm|ogg)$/i.test(product.images[0]) ? (
+                          <video
+                            src={product.images[0]}
+                            className='object-cover w-full h-full group-hover:scale-105 transition-transform duration-500'
+                            muted
+                            loop
+                            autoPlay
+                            playsInline
+                          />
+                        ) : (
+                          <img
+                            src={product.images[0]}
+                            alt={product.name}
+                            className='object-cover w-full h-full group-hover:scale-105 transition-transform duration-500'
+                          />
+                        )
 											) : (
 												<div className='w-full h-full flex items-center justify-center text-slate-400'>
 													No Image
@@ -244,10 +257,7 @@ export default async function Home() {
 				</section>
 			</main>
 
-			{/* Footer */}
-			<footer className='w-full py-8 bg-slate-900 text-slate-400 text-center'>
-				<p>© {new Date().getFullYear()} Amba Agency. All rights reserved.</p>
-			</footer>
+			<Footer />
 		</div>
 	);
 }

@@ -76,7 +76,7 @@ export default function AddProduct() {
                 name="images" 
                 type="file" 
                 multiple 
-                accept="image/jpeg, image/png, image/webp" 
+                accept="image/jpeg, image/png, image/webp, video/mp4, video/webm, video/ogg" 
                 required 
                 onChange={(e) => setFiles(e.target.files)}
               />

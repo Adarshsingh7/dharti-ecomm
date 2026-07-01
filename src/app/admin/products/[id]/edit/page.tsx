@@ -117,34 +117,41 @@ export default function EditProduct({ params }: { params: Promise<{ id: string }
             </div>
             
             <div className="space-y-4">
-              <Label>Existing Images</Label>
+              <Label>Existing Images & Videos</Label>
               {existingImages.length === 0 ? (
-                <p className="text-sm text-slate-500">No images saved.</p>
+                <p className="text-sm text-slate-500">No media saved.</p>
               ) : (
                 <div className="flex flex-wrap gap-4">
-                  {existingImages.map((img, idx) => (
-                    <div key={idx} className="relative w-24 h-24 border rounded overflow-hidden">
-                      <img src={img} alt={`img ${idx}`} className="object-cover w-full h-full" />
-                      <button 
-                        type="button" 
-                        onClick={() => removeExistingImage(idx)}
-                        className="absolute top-1 right-1 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs opacity-80 hover:opacity-100"
-                      >
-                        X
-                      </button>
-                    </div>
-                  ))}
+                  {existingImages.map((img, idx) => {
+                    const isVideo = /\.(mp4|webm|ogg)$/i.test(img);
+                    return (
+                      <div key={idx} className="relative w-24 h-24 border rounded overflow-hidden">
+                        {isVideo ? (
+                          <video src={img} className="object-cover w-full h-full" muted />
+                        ) : (
+                          <img src={img} alt={`img ${idx}`} className="object-cover w-full h-full" />
+                        )}
+                        <button 
+                          type="button" 
+                          onClick={() => removeExistingImage(idx)}
+                          className="absolute top-1 right-1 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs opacity-80 hover:opacity-100"
+                        >
+                          X
+                        </button>
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="newImages">Add New Images (Optional)</Label>
+              <Label htmlFor="newImages">Add New Images or Videos (Optional)</Label>
               <Input 
                 id="newImages" 
                 type="file" 
                 multiple 
-                accept="image/jpeg, image/png, image/webp" 
+                accept="image/jpeg, image/png, image/webp, video/mp4, video/webm, video/ogg" 
                 onChange={(e) => setNewFiles(e.target.files)}
               />
             </div>

@@ -4,6 +4,7 @@ import connectToDatabase from '@/lib/db';
 import { Product } from '@/models/Product';
 import { CheckoutModal } from '@/components/CheckoutModal';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import Footer from '@/components/Footer';
 
 export const dynamic = 'force-dynamic';
 
@@ -54,13 +55,20 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             {product.images && product.images.length > 0 ? (
               <Carousel className="w-full">
                 <CarouselContent>
-                  {product.images.map((img: string, idx: number) => (
-                    <CarouselItem key={idx}>
-                      <div className="aspect-square relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800">
-                        <img src={img} alt={`${product.name} - Image ${idx + 1}`} className="object-cover w-full h-full" />
-                      </div>
-                    </CarouselItem>
-                  ))}
+                  {product.images.map((img: string, idx: number) => {
+                    const isVideo = /\.(mp4|webm|ogg)$/i.test(img);
+                    return (
+                      <CarouselItem key={idx}>
+                        <div className="aspect-square relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800">
+                          {isVideo ? (
+                            <video src={img} controls className="object-cover w-full h-full" />
+                          ) : (
+                            <img src={img} alt={`${product.name} - Image ${idx + 1}`} className="object-cover w-full h-full" />
+                          )}
+                        </div>
+                      </CarouselItem>
+                    );
+                  })}
                 </CarouselContent>
                 {product.images.length > 1 && (
                   <>
@@ -109,6 +117,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
