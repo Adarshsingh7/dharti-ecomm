@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import connectToDatabase from '@/lib/db';
 import { Product } from '@/models/Product';
 import Footer from '@/components/Footer';
+import { ChevronRight } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
@@ -17,18 +18,18 @@ export default async function ProductsPage() {
       <header className="sticky top-0 z-50 w-full border-b bg-white/50 dark:bg-slate-950/50 backdrop-blur-xl">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
-            <img src="/logo.jpeg" alt="Amba Agency Logo" className="h-10 w-auto rounded-md shadow-sm" />
-            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 hidden sm:inline-block">
-              AMBA AGENCY
+            <img src="/logo.jpeg" alt="Dharti Products Logo" className="h-10 w-auto rounded-md shadow-sm" />
+            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-400 dark:to-emerald-400 hidden sm:inline-block">
+              DHARTI PRODUCTS
             </span>
           </Link>
           <nav className="hidden md:flex gap-6">
-            <Link href="/" className="text-sm font-medium hover:text-blue-600 transition-colors">Home</Link>
-            <Link href="/products" className="text-sm font-medium text-blue-600 transition-colors">Products</Link>
-            <Link href="/contact" className="text-sm font-medium hover:text-blue-600 transition-colors">Contact</Link>
+            <Link href="/" className="text-sm font-medium hover:text-green-600 transition-colors">Home</Link>
+            <Link href="/products" className="text-sm font-medium text-green-600 transition-colors">Products</Link>
+            <Link href="/contact" className="text-sm font-medium hover:text-green-600 transition-colors">Contact</Link>
           </nav>
           <div className="md:hidden flex items-center">
-            <Link href="/contact" className="text-sm font-medium hover:text-blue-600 transition-colors">
+            <Link href="/contact" className="text-sm font-medium hover:text-green-600 transition-colors">
               Contact
             </Link>
           </div>
@@ -56,13 +57,20 @@ export default async function ProductsPage() {
                    ) : (
                      <div className="w-full h-full flex items-center justify-center text-slate-400">No Image</div>
                    )}
+                   {product.isFuture && (
+                     <div className="absolute top-3 right-3 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow border border-yellow-300">
+                       Coming Soon
+                     </div>
+                   )}
                  </div>
                  <div className="p-6 flex-1 flex flex-col">
-                   <h3 className="font-bold text-xl mb-2 group-hover:text-blue-600 transition-colors line-clamp-1">{product.name}</h3>
+                   <h3 className="font-bold text-xl mb-2 group-hover:text-green-600 transition-colors line-clamp-1">{product.name}</h3>
                    <p className="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed">{product.description}</p>
                    <div className="mt-auto flex items-center justify-between">
-                     <span className="font-black text-xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">₹{product.price}</span>
-                     <Button variant="default" size="sm" className="rounded-full shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600">Buy Now</Button>
+                     <span className="font-black text-xl bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">₹{product.price}</span>
+                     <div className="w-10 h-10 rounded-full bg-green-50 dark:bg-green-900/20 flex items-center justify-center group-hover:bg-green-600 group-hover:text-white transition-colors">
+                       <ChevronRight className="w-5 h-5" />
+                     </div>
                    </div>
                  </div>
                </Link>

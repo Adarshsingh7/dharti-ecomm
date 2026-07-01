@@ -20,6 +20,7 @@ export default function EditProduct({ params }: { params: Promise<{ id: string }
   const [description, setDescription] = useState("");
   const [existingImages, setExistingImages] = useState<string[]>([]);
   const [newFiles, setNewFiles] = useState<FileList | null>(null);
+  const [isFuture, setIsFuture] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -31,6 +32,7 @@ export default function EditProduct({ params }: { params: Promise<{ id: string }
           setPrice(data.product.price.toString());
           setDescription(data.product.description);
           setExistingImages(data.product.images || []);
+          setIsFuture(data.product.isFuture || false);
         }
       } catch (error) {
         console.error(error);
@@ -58,6 +60,8 @@ export default function EditProduct({ params }: { params: Promise<{ id: string }
     existingImages.forEach(img => {
       formData.append("existingImages", img);
     });
+    
+    formData.append("isFuture", isFuture.toString());
     
     // Add new files
     if (newFiles) {
@@ -156,7 +160,19 @@ export default function EditProduct({ params }: { params: Promise<{ id: string }
               />
             </div>
 
-            <Button type="submit" className="w-full" disabled={loading}>
+            <div className="flex items-center space-x-2">
+              <input 
+                type="checkbox" 
+                id="isFuture" 
+                name="isFuture" 
+                checked={isFuture}
+                onChange={(e) => setIsFuture(e.target.checked)}
+                className="w-4 h-4 text-green-600 rounded border-slate-300 focus:ring-green-500" 
+              />
+              <Label htmlFor="isFuture" className="font-medium cursor-pointer">Mark as "Coming Soon" (Future Product)</Label>
+            </div>
+
+            <Button type="submit" className="w-full bg-green-700 hover:bg-green-800" disabled={loading}>
               {loading ? "Saving Changes..." : "Save Changes"}
             </Button>
           </form>

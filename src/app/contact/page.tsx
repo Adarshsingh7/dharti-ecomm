@@ -51,18 +51,18 @@ export default function ContactPage() {
       <header className="sticky top-0 z-50 w-full border-b bg-white/50 dark:bg-slate-950/50 backdrop-blur-xl">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
-            <img src="/logo.jpeg" alt="Amba Agency Logo" className="h-10 w-auto rounded-md shadow-sm" />
-            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 hidden sm:inline-block">
-              AMBA AGENCY
+            <img src="/logo.jpeg" alt="Dharti Products Logo" className="h-10 w-auto rounded-md shadow-sm" />
+            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-400 dark:to-emerald-400 hidden sm:inline-block">
+              DHARTI PRODUCTS
             </span>
           </Link>
           <nav className="hidden md:flex gap-6">
-            <Link href="/" className="text-sm font-medium hover:text-blue-600 transition-colors">Home</Link>
-            <Link href="/products" className="text-sm font-medium hover:text-blue-600 transition-colors">Products</Link>
-            <Link href="/contact" className="text-sm font-medium text-blue-600 transition-colors">Contact</Link>
+            <Link href="/" className="text-sm font-medium hover:text-green-600 transition-colors">Home</Link>
+            <Link href="/products" className="text-sm font-medium hover:text-green-600 transition-colors">Products</Link>
+            <Link href="/contact" className="text-sm font-medium text-green-600 transition-colors">Contact</Link>
           </nav>
           <div className="md:hidden flex items-center">
-            <Link href="/contact" className="text-sm font-medium hover:text-blue-600 transition-colors">
+            <Link href="/contact" className="text-sm font-medium hover:text-green-600 transition-colors">
               Contact
             </Link>
           </div>
@@ -81,9 +81,11 @@ export default function ContactPage() {
             <CardContent>
               {success ? (
                 <div className="py-8 text-center space-y-4">
-                  <div className="mx-auto w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-3xl mb-4">✓</div>
-                  <h3 className="text-2xl font-bold">Message Sent!</h3>
-                  <p className="text-slate-500">Thank you for reaching out to Amba Agency. We will review your inquiry shortly.</p>
+                  <div className="bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200 p-8 rounded-2xl text-center shadow-inner border border-green-100 dark:border-green-800">
+                    <div className="text-5xl mb-4">✅</div>
+                    <h3 className="text-2xl font-bold mb-2">Message Sent Successfully!</h3>
+                    <p className="text-slate-500">Thank you for reaching out to Dharti Products. We will review your inquiry shortly.</p>
+                  </div>
                   <Button onClick={() => setSuccess(false)} variant="outline" className="mt-6">Send Another Message</Button>
                 </div>
               ) : (
@@ -104,8 +106,8 @@ export default function ContactPage() {
                     <Label htmlFor="message">Message / Contract Request</Label>
                     <Textarea id="message" name="message" required placeholder="Tell us what you need..." className="min-h-[120px]" />
                   </div>
-                  <Button type="submit" className="w-full py-6 text-lg rounded-full shadow-lg shadow-blue-500/20 hover:scale-105 transition-all bg-gradient-to-r from-blue-600 to-indigo-600" disabled={loading}>
-                    {loading ? "Sending..." : "Submit Inquiry"}
+                  <Button type="submit" className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700" disabled={loading}>
+                    {loading ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               )}

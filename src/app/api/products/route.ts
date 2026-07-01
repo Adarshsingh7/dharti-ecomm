@@ -30,6 +30,7 @@ export async function POST(request: NextRequest) {
     const name = formData.get('name') as string;
     const description = formData.get('description') as string;
     const price = parseFloat(formData.get('price') as string);
+    const isFuture = formData.get('isFuture') === 'true';
     
     const imagePaths: string[] = [];
     
@@ -60,6 +61,7 @@ export async function POST(request: NextRequest) {
       description,
       price,
       images: imagePaths,
+      isFuture,
     });
 
     await newProduct.save();

@@ -6,6 +6,7 @@ export interface IProduct extends Document {
   images: string[];
   price: number;
   isActive: boolean;
+  isFuture: boolean;
   createdAt: Date;
 }
 
@@ -15,6 +16,7 @@ const ProductSchema: Schema<IProduct> = new Schema({
   images: { type: [String], required: true },
   price: { type: Number, required: true },
   isActive: { type: Boolean, default: true },
+  isFuture: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now },
 });
 

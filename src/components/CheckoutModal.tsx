@@ -48,7 +48,7 @@ export function CheckoutModal({ productId, productName, price }: { productId: st
     <Dialog open={open} onOpenChange={setOpen}>
       {/* @ts-ignore */}
       <DialogTrigger asChild>
-        <Button size="lg" className="w-full md:w-auto rounded-full px-12 shadow-xl shadow-blue-500/20 hover:scale-105 transition-all bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg">
+        <Button size="lg" className="w-full md:w-auto rounded-full px-12 shadow-xl shadow-green-500/20 hover:scale-105 transition-all bg-gradient-to-r from-green-600 to-emerald-600 text-white font-bold text-lg">
           Buy Now - ₹{price}
         </Button>
       </DialogTrigger>
@@ -84,11 +84,11 @@ export function CheckoutModal({ productId, productName, price }: { productId: st
               <Label htmlFor="contact">Alternate Contact / Email (Optional)</Label>
               <Input id="contact" name="contact" placeholder="Email or alternate phone" />
             </div>
-            <div className="bg-blue-50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 p-3 rounded-lg text-sm font-medium mt-4">
+            <div className="bg-green-50 dark:bg-green-900/30 text-green-800 dark:text-green-300 p-3 rounded-lg text-sm font-medium mt-4">
               Payment Method: Cash on Delivery (COD) Only
             </div>
-            <Button type="submit" className="w-full mt-6" disabled={loading}>
-              {loading ? "Processing..." : "Place Order (COD)"}
+            <Button type="submit" className="w-full bg-green-700 hover:bg-green-800" disabled={loading}>
+              {loading ? "Processing..." : "Confirm Cash on Delivery"}
             </Button>
           </form>
         )}

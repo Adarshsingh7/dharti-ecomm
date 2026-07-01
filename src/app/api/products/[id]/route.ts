@@ -45,6 +45,7 @@ export async function PATCH(
       const name = formData.get('name') as string;
       const description = formData.get('description') as string;
       const price = parseFloat(formData.get('price') as string);
+      const isFuture = formData.get('isFuture') === 'true';
       
       // Kept existing images
       const existingImages = formData.getAll('existingImages') as string[];
@@ -80,7 +81,8 @@ export async function PATCH(
         name,
         description,
         price,
-        images: allImages
+        images: allImages,
+        isFuture,
       }, { new: true });
       
       if (!product) return NextResponse.json({ success: false }, { status: 404 });

@@ -30,18 +30,18 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       <header className="sticky top-0 z-50 w-full border-b bg-white/50 dark:bg-slate-950/50 backdrop-blur-xl">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
-            <img src="/logo.jpeg" alt="Amba Agency Logo" className="h-10 w-auto rounded-md shadow-sm" />
-            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 hidden sm:inline-block">
-              AMBA AGENCY
+            <img src="/logo.jpeg" alt="Dharti Products Logo" className="h-10 w-auto rounded-md shadow-sm" />
+            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-400 dark:to-emerald-400 hidden sm:inline-block">
+              DHARTI PRODUCTS
             </span>
           </Link>
           <nav className="hidden md:flex gap-6">
-            <Link href="/" className="text-sm font-medium hover:text-blue-600 transition-colors">Home</Link>
-            <Link href="/products" className="text-sm font-medium hover:text-blue-600 transition-colors">Products</Link>
-            <Link href="/contact" className="text-sm font-medium hover:text-blue-600 transition-colors">Contact</Link>
+            <Link href="/" className="text-sm font-medium hover:text-green-600 transition-colors">Home</Link>
+            <Link href="/products" className="text-sm font-medium hover:text-green-600 transition-colors">Products</Link>
+            <Link href="/contact" className="text-sm font-medium hover:text-green-600 transition-colors">Contact</Link>
           </nav>
           <div className="md:hidden flex items-center">
-            <Link href="/contact" className="text-sm font-medium hover:text-blue-600 transition-colors">
+            <Link href="/contact" className="text-sm font-medium hover:text-green-600 transition-colors">
               Contact
             </Link>
           </div>
@@ -87,12 +87,19 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           {/* Product Details */}
           <div className="flex flex-col space-y-8">
             <div>
-              <Link href="/products" className="text-sm text-blue-600 dark:text-blue-400 font-medium hover:underline mb-4 inline-block">
+              <Link href="/products" className="text-sm text-green-600 dark:text-green-400 font-medium hover:underline mb-4 inline-block">
                 ← Back to Products
               </Link>
               <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">{product.name}</h1>
-              <div className="text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-                ₹{product.price}
+              <div className="flex items-center gap-4">
+                <div className="text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">
+                  ₹{product.price}
+                </div>
+                {product.isFuture && (
+                  <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow border border-yellow-300">
+                    Coming Soon
+                  </span>
+                )}
               </div>
             </div>
 
@@ -104,14 +111,20 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             </div>
 
             <div className="pt-8 border-t border-slate-200 dark:border-slate-800">
-              <CheckoutModal productId={product._id} productName={product.name} price={product.price} />
+              {product.isFuture ? (
+                <button disabled className="w-full md:w-auto rounded-full px-12 py-3 bg-slate-200 text-slate-500 font-bold text-lg cursor-not-allowed">
+                  Coming Soon
+                </button>
+              ) : (
+                <CheckoutModal productId={product._id} productName={product.name} price={product.price} />
+              )}
             </div>
             
-            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 flex items-start gap-4">
+            <div className="bg-green-50 dark:bg-green-900/20 rounded-xl p-6 flex items-start gap-4">
               <div className="text-2xl">🛡️</div>
               <div>
-                <h4 className="font-bold text-blue-900 dark:text-blue-100 mb-1">Authentic Dhatri Product</h4>
-                <p className="text-sm text-blue-700 dark:text-blue-300">Distributed securely by Amba Agency. Quality guaranteed.</p>
+                <h4 className="font-bold text-green-900 dark:text-green-100 mb-1">Authentic Dharti Product</h4>
+                <p className="text-sm text-green-700 dark:text-green-300">Quality guaranteed.</p>
               </div>
             </div>
           </div>

@@ -83,7 +83,12 @@ export default function AddProduct() {
               <p className="text-xs text-slate-500">Please upload JPG, PNG, or WEBP images (HEIC is not supported by browsers).</p>
             </div>
 
-            <Button type="submit" className="w-full" disabled={loading}>
+            <div className="flex items-center space-x-2">
+              <input type="checkbox" id="isFuture" name="isFuture" value="true" className="w-4 h-4 text-green-600 rounded border-slate-300 focus:ring-green-500" />
+              <Label htmlFor="isFuture" className="font-medium cursor-pointer">Mark as "Coming Soon" (Future Product)</Label>
+            </div>
+
+            <Button type="submit" className="w-full bg-green-700 hover:bg-green-800" disabled={loading}>
               {loading ? "Adding Product..." : "Save Product"}
             </Button>
           </form>
