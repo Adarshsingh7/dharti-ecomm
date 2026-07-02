@@ -1,0 +1,140 @@
+[browser] In HTML, <button> cannot be a descendant of <button>.
+This will cause a hydration error.
+
+  ...
+    <SegmentViewNode type="page" pagePath="products/[...">
+      <SegmentTrieNode>
+      <ProductDetailPage>
+        <div className="min-h-scre...">
+          <header>
+          <main className="container ...">
+            <div className="grid grid-...">
+              <div>
+              <div className="flex flex-...">
+                <div>
+                <div>
+                <div className="pt-8 borde...">
+                  <CheckoutModal productId="6a45fc0808..." productName="Premium To..." price={178}>
+                    <Dialog open={false} onOpenChange={function bound dispatchSetState}>
+                      <DialogRoot data-slot="dialog" open={false} onOpenChange={function bound dispatchSetState}>
+                        <DialogTrigger asChild={true}>
+                          <DialogTrigger data-slot="dialog-tri..." asChild={true}>
+>                           <button
+>                             type="button"
+>                             onClick={function}
+>                             onMouseDown={function}
+>                             onKeyDown={function}
+>                             onKeyUp={function}
+>                             onPointerDown={function}
+>                             tabIndex={0}
+>                             disabled={false}
+>                             data-base-ui-click-trigger=""
+>                             id="base-ui-_r_1_"
+>                             aria-haspopup="dialog"
+>                             aria-expanded={false}
+>                             aria-controls={undefined}
+>                             data-slot="dialog-trigger"
+>                             asChild={true}
+>                             ref={function}
+>                           >
+                              <Button size="lg" className="w-full md:...">
+                                <Button data-slot="button" className={"group/bu..."}>
+>                                 <button
+>                                   type="button"
+>                                   onClick={function}
+>                                   onMouseDown={function}
+>                                   onKeyDown={function}
+>                                   onKeyUp={function}
+>                                   onPointerDown={function}
+>                                   tabIndex={0}
+>                                   disabled={false}
+>                                   data-slot="button"
+>                                   ref={function}
+>                                   className={"group/button inline-flex shrink-0 items-center justify-center border ..."}
+>                                 >
+                        ...
+                ...
+          ...
+    ...
+ 
+[browser] <button> cannot contain a nested <button>.
+See this log for the ancestor stack trace. 
+[browser] React does not recognize the `asChild` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `aschild` instead. If you accidentally passed it from a parent component, remove it from the DOM element. 
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="outfit_c0c...">
+                          <body
+                            className="min-h-full flex flex-col"
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+ 
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/admin/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="outfit_c0c...">
+                          <body
+                            className="min-h-full flex flex-col"
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+ 
+(node:1400) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1400) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:1400) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:1400) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:1400) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.

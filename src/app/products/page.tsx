@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic';
 
 export default async function ProductsPage() {
   await connectToDatabase();
-  const productsDocs = await Product.find({ isActive: { $ne: false } }).sort({ createdAt: -1 });
+  const productsDocs = await Product.find({ isActive: { $ne: false } }).sort({ isFuture: 1, createdAt: -1 });
   const products = JSON.parse(JSON.stringify(productsDocs));
 
   return (

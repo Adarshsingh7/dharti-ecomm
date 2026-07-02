@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 export default async function Home() {
 	await connectToDatabase();
 	const productsDocs = await Product.find({ isActive: { $ne: false } })
-		.sort({ createdAt: -1 })
+		.sort({ isFuture: 1, createdAt: -1 })
 		.limit(4);
 	const products = JSON.parse(JSON.stringify(productsDocs));
 
@@ -221,6 +221,44 @@ export default async function Home() {
 									View All Products
 								</Button>
 							</Link>
+						</div>
+					</div>
+				</section>
+
+				{/* Product Clips Section */}
+				<section className='w-full py-20 bg-white dark:bg-slate-900'>
+					<div className='container mx-auto px-4 md:px-6'>
+						<div className='mx-auto max-w-3xl text-center mb-12'>
+							<p className='text-sm font-bold uppercase tracking-wider text-green-600 dark:text-green-400 mb-3'>
+								Product Highlights
+							</p>
+							<h2 className='text-3xl md:text-4xl font-bold tracking-tight mb-4'>
+								See Dharti Products in Action
+							</h2>
+							<p className='text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed'>
+								Watch a closer look at our products and presentation before you
+								place your order.
+							</p>
+						</div>
+
+						<div className='grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8'>
+							{[
+								{ src: '/clips/clip1.mp4', title: 'Product Presentation Clip 1' },
+								{ src: '/clips/clip2.mp4', title: 'Product Presentation Clip 2' },
+							].map((clip) => (
+								<video
+									key={clip.src}
+									src={clip.src}
+									title={clip.title}
+									autoPlay
+									muted
+									loop
+									playsInline
+									preload='metadata'
+									aria-label={clip.title}
+									className='aspect-video w-full rounded-3xl object-cover shadow-2xl shadow-slate-900/10 dark:shadow-black/30'
+								/>
+							))}
 						</div>
 					</div>
 				</section>
