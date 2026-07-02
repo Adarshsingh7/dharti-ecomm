@@ -18,9 +18,9 @@ export default async function ProductsPage() {
       <header className="sticky top-0 z-50 w-full border-b bg-white/50 dark:bg-slate-950/50 backdrop-blur-xl">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
-            <img src="/logo.jpeg" alt="Dharti Products Logo" className="h-10 w-auto rounded-md shadow-sm" />
+            <img src="/logo.jpeg" alt="Dhatri Products Logo" className="h-10 w-auto rounded-md shadow-sm" />
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-400 dark:to-emerald-400 hidden sm:inline-block">
-              DHARTI PRODUCTS
+              DHATRI PRODUCTS
             </span>
           </Link>
           <nav className="hidden md:flex gap-6">

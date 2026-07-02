@@ -43,12 +43,12 @@ export default function HeroSlider() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6 h-full flex flex-col items-center justify-center text-center">
         <div className="inline-block animate-bounce rounded-full bg-green-500/20 px-3 py-1 text-sm text-green-300 font-medium mb-6 backdrop-blur-md border border-green-500/30">
-          Welcome to Dharti Products
+          Welcome to Dhatri Products
         </div>
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-white drop-shadow-lg">
           Discover the Magic of <br />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-400">
-            Dharti Products
+            Dhatri Products
           </span>
         </h1>
         <p className="mx-auto max-w-[700px] text-lg text-slate-200 mb-10 drop-shadow-md">

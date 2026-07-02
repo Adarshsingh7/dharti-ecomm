@@ -30,9 +30,9 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       <header className="sticky top-0 z-50 w-full border-b bg-white/50 dark:bg-slate-950/50 backdrop-blur-xl">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
-            <img src="/logo.jpeg" alt="Dharti Products Logo" className="h-10 w-auto rounded-md shadow-sm" />
+            <img src="/logo.jpeg" alt="Dhatri Products Logo" className="h-10 w-auto rounded-md shadow-sm" />
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-400 dark:to-emerald-400 hidden sm:inline-block">
-              DHARTI PRODUCTS
+              DHATRI PRODUCTS
             </span>
           </Link>
           <nav className="hidden md:flex gap-6">
@@ -123,7 +123,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <div className="bg-green-50 dark:bg-green-900/20 rounded-xl p-6 flex items-start gap-4">
               <div className="text-2xl">🛡️</div>
               <div>
-                <h4 className="font-bold text-green-900 dark:text-green-100 mb-1">Authentic Dharti Product</h4>
+                <h4 className="font-bold text-green-900 dark:text-green-100 mb-1">Authentic Dhatri Product</h4>
                 <p className="text-sm text-green-700 dark:text-green-300">Quality guaranteed.</p>
               </div>
             </div>

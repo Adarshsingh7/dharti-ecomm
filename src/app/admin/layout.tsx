@@ -9,7 +9,7 @@ export default function AdminLayout({
     <div className="min-h-screen bg-slate-100 dark:bg-slate-900">
       <header className="bg-white dark:bg-slate-950 border-b px-6 py-4 flex items-center justify-between sticky top-0 z-10">
         <div className="font-bold text-xl text-green-600 dark:text-green-400">
-          Dharti Products Admin Panel
+          Dhatri Products Admin Panel
         </div>
         <nav className="flex gap-4">
           <Link href="/admin" className="text-sm font-medium hover:text-green-600">

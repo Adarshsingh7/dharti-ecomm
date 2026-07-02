@@ -79,14 +79,26 @@ export default async function Home() {
 						<div className='flex flex-col md:flex-row items-center gap-12'>
 							<div className='flex-1 space-y-6'>
 								<h2 className='text-3xl md:text-4xl font-bold tracking-tight mb-4'>
-									About Dharti Products
+									About Dhatri Products
 								</h2>
 								<p className='text-slate-600 dark:text-slate-400 text-lg leading-relaxed'>
-									Dharti Products is a premier marketing and distribution company
+									Dhatri Products is a premier marketing and distribution company
 									specializing in delivering high-quality, authentic products directly
 									to consumers.
 								</p>
 								<div className='pt-4 flex flex-col gap-3'>
+									<div className='rounded-2xl bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-900/40 p-4'>
+										<p className='text-sm font-bold uppercase tracking-wider text-green-700 dark:text-green-300 mb-2'>
+											Shop Address
+										</p>
+										<div className='font-medium text-slate-700 dark:text-slate-300 leading-relaxed'>
+											<p className='font-bold text-slate-900 dark:text-slate-100'>
+												Amba Agency
+											</p>
+											<p>Dakhin Darwaza Station Road, Basti</p>
+											<p>Pin Code: 272002, Uttar Pradesh</p>
+										</div>
+									</div>
 									<div className='flex items-center gap-3'>
 										<div className='w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400'>
 											📧
@@ -107,11 +119,11 @@ export default async function Home() {
 							</div>
 							<div className='flex-1 flex flex-col items-center'>
 								<div className='relative h-[400px] w-full max-w-[400px] rounded-2xl overflow-hidden shadow-2xl border-[6px] border-white dark:border-slate-800 ring-4 ring-green-100 dark:ring-green-900 mb-6'>
-									<img src='/founder.jpg' alt='Founder Prince Barnawal' className='w-full h-full object-cover' />
+									<img src='/founder.jpg' alt='Founder Prince Baranwal' className='w-full h-full object-cover' />
 								</div>
 								<div className='text-center bg-white dark:bg-slate-800 px-8 py-3 rounded-full shadow-lg border border-slate-100 dark:border-slate-700'>
 									<p className='text-sm text-green-600 dark:text-green-400 font-bold uppercase tracking-wider mb-1'>Founder</p>
-									<h3 className='text-xl font-bold text-slate-800 dark:text-slate-200'>Prince Barnawal</h3>
+									<h3 className='text-xl font-bold text-slate-800 dark:text-slate-200'>Prince Baranwal</h3>
 								</div>
 							</div>
 						</div>
@@ -233,7 +245,7 @@ export default async function Home() {
 								Product Highlights
 							</p>
 							<h2 className='text-3xl md:text-4xl font-bold tracking-tight mb-4'>
-								See Dharti Products in Action
+								See Dhatri Products in Action
 							</h2>
 							<p className='text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed'>
 								Watch a closer look at our products and presentation before you

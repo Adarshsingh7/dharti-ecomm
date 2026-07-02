@@ -13,8 +13,8 @@ const outfitMono = Outfit_Mono({
 });
 
 export const metadata: Metadata = {
-	title: 'Dharti Ecom',
-	description: 'Buy genuine products from dharti ecom',
+	title: 'Dhatri Ecom',
+	description: 'Buy genuine products from dhatri ecom',
 };
 
 export default function RootLayout({
