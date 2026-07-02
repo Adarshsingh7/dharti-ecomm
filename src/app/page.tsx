@@ -250,9 +250,7 @@ export default async function Home() {
 									key={clip.src}
 									src={clip.src}
 									title={clip.title}
-									autoPlay
-									muted
-									loop
+									controls
 									playsInline
 									preload='metadata'
 									aria-label={clip.title}

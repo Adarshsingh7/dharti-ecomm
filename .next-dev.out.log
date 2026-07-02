@@ -143,3 +143,9 @@
  GET /api/products 200 in 93ms (next.js: 8ms, application-code: 85ms)
  GET /api/products 200 in 85ms (next.js: 4ms, application-code: 81ms)
  GET / 200 in 142ms (next.js: 5ms, application-code: 137ms)
+✓ Compiled in 421ms
+ GET / 200 in 822ms (next.js: 283ms, application-code: 539ms)
+ GET / 200 in 439ms (next.js: 237ms, application-code: 202ms)
+ GET / 200 in 400ms (next.js: 24ms, application-code: 377ms)
+ GET / 200 in 224ms (next.js: 7ms, application-code: 217ms)
+ GET / 200 in 636ms (next.js: 7ms, application-code: 630ms)
