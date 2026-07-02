@@ -105,16 +105,13 @@ export default async function Home() {
 									</div>
 								</div>
 							</div>
-							<div className='flex-1'>
-								<div className='relative h-[400px] w-full rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-green-500 to-emerald-600 p-8'>
-									<div className='flex items-center justify-center bg-green-50 dark:bg-green-900/10 rounded-3xl p-8 h-full border border-green-100 dark:border-green-900/30'>
-										<div className='text-center'>
-											<h3 className='text-5xl font-black mb-4'>DHARTI</h3>
-											<p className='text-green-600 dark:text-green-400 font-medium tracking-widest uppercase'>
-												PRODUCTS
-											</p>
-										</div>
-									</div>
+							<div className='flex-1 flex flex-col items-center'>
+								<div className='relative h-[400px] w-full max-w-[400px] rounded-2xl overflow-hidden shadow-2xl border-[6px] border-white dark:border-slate-800 ring-4 ring-green-100 dark:ring-green-900 mb-6'>
+									<img src='/founder.jpg' alt='Founder Prince Barnawal' className='w-full h-full object-cover' />
+								</div>
+								<div className='text-center bg-white dark:bg-slate-800 px-8 py-3 rounded-full shadow-lg border border-slate-100 dark:border-slate-700'>
+									<p className='text-sm text-green-600 dark:text-green-400 font-bold uppercase tracking-wider mb-1'>Founder</p>
+									<h3 className='text-xl font-bold text-slate-800 dark:text-slate-200'>Prince Barnawal</h3>
 								</div>
 							</div>
 						</div>
