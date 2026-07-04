@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Outfit, Outfit as Outfit_Mono } from 'next/font/google';
+import FloatingContactButtons from '@/components/FloatingContactButtons';
 import './globals.css';
 
 const outfitSans = Outfit({
@@ -27,7 +28,10 @@ export default function RootLayout({
 			lang='en'
 			className={`${outfitSans.variable} ${outfitMono.variable} font-sans h-full antialiased`}
 		>
-			<body className='min-h-full flex flex-col'>{children}</body>
+			<body className='min-h-full flex flex-col'>
+				{children}
+				<FloatingContactButtons />
+			</body>
 		</html>
 	);
 }

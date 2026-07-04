@@ -402,3 +402,45 @@ This will cause a hydration error.
 [browser] <button> cannot contain a nested <button>.
 See this log for the ancestor stack trace. 
 [browser] React does not recognize the `asChild` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `aschild` instead. If you accidentally passed it from a parent component, remove it from the DOM element. 
+⨯ MongoServerSelectionError: getaddrinfo ENOTFOUND ac-dhxwad0-shard-00-01.zdgjyz8.mongodb.net
+    at async Home (src\app\page.tsx:13:23)
+  11 | export default async function Home() {
+  12 | 	await connectToDatabase();
+> 13 | 	const productsDocs = await Product.find({ isActive: { $ne: false } })
+     |                      ^
+  14 | 		.sort({ isFuture: 1, createdAt: -1 })
+  15 | 		.limit(4);
+  16 | 	const products = JSON.parse(JSON.stringify(productsDocs)); {
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-dhxwad0-shard-00-00.zdgjyz8.mongodb.net:27017' => [ServerDescription],
+      'ac-dhxwad0-shard-00-01.zdgjyz8.mongodb.net:27017' => [ServerDescription],
+      'ac-dhxwad0-shard-00-02.zdgjyz8.mongodb.net:27017' => [ServerDescription]
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-yft097-shard-0',
+    maxElectionId: new ObjectId('7fffffff0000000000000151'),
+    maxSetVersion: 336,
+    commonWireVersion: 25,
+    logicalSessionTimeoutMinutes: 30
+  },
+  code: undefined,
+  digest: '3902652278',
+  [cause]: MongoNetworkError: getaddrinfo ENOTFOUND ac-dhxwad0-shard-00-01.zdgjyz8.mongodb.net
+      at ignore-listed frames {
+    errorLabelSet: Set(3) { 'SystemOverloadedError', 'RetryableError', 'ResetPool' },
+    beforeHandshake: false,
+    [cause]: Error: getaddrinfo ENOTFOUND ac-dhxwad0-shard-00-01.zdgjyz8.mongodb.net
+        at ignore-listed frames {
+      errno: -3008,
+      code: 'ENOTFOUND',
+      syscall: 'getaddrinfo',
+      hostname: 'ac-dhxwad0-shard-00-01.zdgjyz8.mongodb.net'
+    }
+  }
+}

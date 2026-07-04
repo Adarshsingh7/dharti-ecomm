@@ -41,7 +41,7 @@ export default function HeroSlider() {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 md:px-6 h-full flex flex-col items-center justify-center text-center">
+      {/* <div className="relative z-10 container mx-auto px-4 md:px-6 h-full flex flex-col items-center justify-center text-center">
         <div className="inline-block animate-bounce rounded-full bg-green-500/20 px-3 py-1 text-sm text-green-300 font-medium mb-6 backdrop-blur-md border border-green-500/30">
           Welcome to Dhatri Products
         </div>
@@ -64,7 +64,7 @@ export default function HeroSlider() {
             </Button>
           </Link>
         </div>
-      </div>
+      </div> */}
 
       {/* Slider Indicators */}
       <div className="absolute bottom-8 left-0 right-0 z-10 flex justify-center gap-2">
